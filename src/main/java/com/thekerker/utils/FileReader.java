@@ -12,16 +12,16 @@ import java.util.Scanner;
 
 @Slf4j
 public class FileReader {
-    public static List<String> readCalibrationFile() {
+    public static List<String> readCalibrationFile(String fileLocation) {
         List<String> lines = new ArrayList<>();
 
-        Path path = Paths.get("src/main/resources/day1/input1.txt");
+        Path path = Paths.get(fileLocation);
         try (Scanner scanner = new Scanner(path, StandardCharsets.UTF_8)) {
             while (scanner.hasNext()) {
                 lines.add(scanner.next());
             }
         } catch (IOException e) {
-            log.error("Unable to read input file: " + e.getMessage());
+            log.error("Unable to read input file at " + fileLocation + ": " + e.getMessage());
         }
 
         return lines;

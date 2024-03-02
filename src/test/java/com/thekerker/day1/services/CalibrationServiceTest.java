@@ -31,4 +31,22 @@ public class CalibrationServiceTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldGetCalibratedSum2() {
+        List<String> input = new ArrayList<>();
+        input.add("two1nine");
+        input.add("eightwothree");
+        input.add("abcone2threexyz");
+        input.add("xtwone3four");
+        input.add("4nineeightseven2");
+        input.add("zoneight234");
+        input.add("7pqrstsixteen");
+
+        int expected = 281;
+
+        int actual = service.getCalibratedSum2(input);
+
+        assertEquals(expected, actual);
+    }
 }
